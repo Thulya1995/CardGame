@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var rightScoreLabel: UILabel!
     
+    var leftScore = 0
+    var rightScore = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,15 @@ class ViewController: UIViewController {
         
         leftImageView.image = UIImage(named: "card\(leftnumber)")
         rightImageView.image = UIImage(named:"card\(rightnumber)")
+        
+        if leftnumber > rightnumber{
+            leftScore += 1
+            leftScoreLabel.text = String(leftScore)
+        }else if leftnumber < rightnumber{
+            rightScore += 1
+            rightScoreLabel.text = String(rightScore)
+        }
+        
     }
     
 }
